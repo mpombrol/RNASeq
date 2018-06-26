@@ -17,15 +17,21 @@ Command: sickle se -f $(DIRPATH)/READS/$${file}.fastq -o $(DIRPATH)/RNA_SEQ/Sick
 
 ***HISAT2: Index build***
 Purpose: builds a HISAT2 index for aligning RNA reads to reference genome
+
 Output: Index files, .ht2
 Location: /local/cluster/hisat2-2.1.0/
+
 Commands:
+
 	/local/cluster/hisat2-2.1.0/hisat2_extract_splice_sites.py Tpseudo_annot.gtf > tp.ss
+	
         /local/cluster/hisat2-2.1.0/hisat2_extract_exons.py Tpseudo_annot.gtf > tp.ex
+	
         /local/cluster/hisat2-2.1.0/hisat2-build --ss tp.ss --exon tp.ex Tpseudo_genome.fa tp_index
+	
 Runtime: ~5 minutes total
-Notes: Used gffread (/local/cluster/bin/) to convert annotated genome from NCBI (accession # GCA_000149405.2) from GFF to GTF format. Python s$
-provided in HISAT2 package for index building do not accept GFF files.
+
+Notes: Used gffread (/local/cluster/bin/) to convert annotated genome from NCBI (accession # GCA_000149405.2) from GFF to GTF format. Python scripts provided in HISAT2 package for index building do not accept GFF files.
 
 ***HISAT2***
 Purpose: aligns reads to reference genome
