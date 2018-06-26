@@ -2,7 +2,7 @@
 #
 # Makefile 
 # 
-# Used to process Illumina Hiseq 3000 single-end 150 bp mRNA reads from nine T. pseduonana samples. 
+# Used to process Illumina Hiseq 3000 single-end 150 bp mRNA-derived reads from nine T. pseduonana samples. 
 
 DIRPATH = /nfs1/MICRO/Halsey_Lab/lightlim_tp
 DB = $(DIRPATH)/DB
